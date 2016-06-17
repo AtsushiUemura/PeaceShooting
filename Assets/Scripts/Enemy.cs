@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
@@ -37,7 +36,7 @@ public abstract class Enemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    protected void InitStatus(int maxHp, int speed, int attack, int deffence, int addScore)
+    protected void InitStatus(int maxHp, int speed, int attack, int deffence, int addScore, Slider hpBar)
     {
         hp = maxHp;
         this.speed = speed;
@@ -45,9 +44,13 @@ public abstract class Enemy : MonoBehaviour
         this.deffence = deffence;
         this.addScore = addScore;
         isDead = false;
+        this.hpBar = hpBar;
     }
+    /// <summary>
+    /// デバッグ
+    /// </summary>
     protected void DebugLog()
     {
-        Debug.Log("hp: " + hp + " sp: " + speed + " at: " + attack + " df: " + deffence + " as: " + addScore);
+        Debug.Log("hp: " + hp + " sp: " + speed + " at: " + attack + " df: " + deffence + " as: " + addScore + " sl: " + hpBar.name);
     }
 }
