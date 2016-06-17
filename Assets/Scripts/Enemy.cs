@@ -13,8 +13,13 @@ public abstract class Enemy : MonoBehaviour
     protected int addScore { get; set; }
     protected bool isDead { get; set; }
     protected Slider hpBar { get; set; }
-
+    /// <summary>
+    /// 敵の動き操作
+    /// </summary>
     protected abstract void Move();
+    /// <summary>
+    /// 敵の弾幕操作
+    /// </summary>
     protected abstract void Shot();
 
     protected void OnBecameInvisible()
