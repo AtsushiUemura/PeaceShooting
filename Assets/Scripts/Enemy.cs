@@ -37,8 +37,17 @@ public abstract class Enemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    protected void InitStatus(int maxHp)
+    protected void InitStatus(int maxHp, int speed, int attack, int deffence, int addScore)
     {
         hp = maxHp;
+        this.speed = speed;
+        this.attack = attack;
+        this.deffence = deffence;
+        this.addScore = addScore;
+        isDead = false;
+    }
+    protected void DebugLog()
+    {
+        Debug.Log("hp: " + hp + " sp: " + speed + " at: " + attack + " df: " + deffence + " as: " + addScore);
     }
 }

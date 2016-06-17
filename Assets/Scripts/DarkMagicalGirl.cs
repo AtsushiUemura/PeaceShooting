@@ -7,7 +7,7 @@ public class DarkMagicalGirl : Enemy
     public int _speed;
     public int _attack;
     public int _deffence;
-
+    public int _addScore;
     protected override void Move()
     {
         Debug.Log("move");
@@ -20,9 +20,10 @@ public class DarkMagicalGirl : Enemy
     // Use this for initialization
     void Start()
     {
-        base.InitStatus();
+        base.InitStatus(_maxHp, _speed, _attack, _deffence, _addScore);
         Move();
         Shot();
+        base.DebugLog();
     }
 
     // Update is called once per frame
