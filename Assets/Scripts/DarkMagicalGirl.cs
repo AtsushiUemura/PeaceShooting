@@ -3,6 +3,10 @@ using System.Collections;
 
 public class DarkMagicalGirl : Enemy
 {
+    public int _maxHp;
+    public int _speed;
+    public int _attack;
+    public int _deffence;
 
     protected override void Move()
     {
@@ -16,6 +20,7 @@ public class DarkMagicalGirl : Enemy
     // Use this for initialization
     void Start()
     {
+        base.InitStatus();
         Move();
         Shot();
     }

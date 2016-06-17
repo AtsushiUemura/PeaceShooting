@@ -37,7 +37,7 @@ public abstract class Enemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    protected void InitStatus()
+    protected void InitStatus(int maxHp)
     {
         hp = maxHp;
     }
