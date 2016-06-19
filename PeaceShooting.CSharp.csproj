@@ -69,18 +69,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AI.cs" />
-    <Compile Include="Assets\Scripts\DarkMagicalGirl.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\ZeroScript\Animation\FadeScript.cs" />
-    <Compile Include="Assets\ZeroScript\Bullet.cs" />
-    <Compile Include="Assets\ZeroScript\Character\Player.cs" />
-    <Compile Include="Assets\ZeroScript\Character\PlayerMovement.cs" />
-    <Compile Include="Assets\ZeroScript\Character\PlayerShooting.cs" />
-    <Compile Include="Assets\ZeroScript\Manager\ScoreManager.cs" />
-    <Compile Include="Assets\ZeroScript\Manager\SoundManager.cs" />
-    <Compile Include="Assets\ZeroScript\Manager\StageManager.cs" />
-    <Compile Include="Assets\ZeroScript\Manager\TitleManager.cs" />
+    <Compile Include="Assets\TetoraScripts\AI.cs" />
+    <Compile Include="Assets\TetoraScripts\DarkMagicalGirl.cs" />
+    <Compile Include="Assets\TetoraScripts\Enemy.cs" />
+    <Compile Include="Assets\ZeroScripts\Animation\FadeScript.cs" />
+    <Compile Include="Assets\ZeroScripts\Bullet.cs" />
+    <Compile Include="Assets\ZeroScripts\Character\Player.cs" />
+    <Compile Include="Assets\ZeroScripts\Character\PlayerMovement.cs" />
+    <Compile Include="Assets\ZeroScripts\Character\PlayerShooting.cs" />
+    <Compile Include="Assets\ZeroScripts\Manager\ScoreManager.cs" />
+    <Compile Include="Assets\ZeroScripts\Manager\SoundManager.cs" />
+    <Compile Include="Assets\ZeroScripts\Manager\StageManager.cs" />
+    <Compile Include="Assets\ZeroScripts\Manager\TitleManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
