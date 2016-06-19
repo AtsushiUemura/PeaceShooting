@@ -11,6 +11,7 @@ public abstract class Enemy : MonoBehaviour
     protected int deffence { get; set; }
     protected int addScore { get; set; }
     protected bool isDead { get; set; }
+    protected Sprite bullet { get; set; }
     protected Slider hpBar { get; set; }
     /// <summary>
     /// 敵の動き操作
@@ -36,7 +37,7 @@ public abstract class Enemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    protected void InitStatus(int maxHp, int speed, int attack, int deffence, int addScore, Slider hpBar)
+    protected void InitStatus(int maxHp, int speed, int attack, int deffence, int addScore, Sprite bullet, Slider hpBar)
     {
         hp = maxHp;
         this.speed = speed;
@@ -44,6 +45,7 @@ public abstract class Enemy : MonoBehaviour
         this.deffence = deffence;
         this.addScore = addScore;
         isDead = false;
+        this.bullet = bullet;
         this.hpBar = hpBar;
     }
     /// <summary>
@@ -51,6 +53,6 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     protected void DebugLog()
     {
-        Debug.Log("hp: " + hp + " sp: " + speed + " at: " + attack + " df: " + deffence + " as: " + addScore + " sl: " + hpBar.name);
+        Debug.Log("hp: " + hp + " sp: " + speed + " at: " + attack + " df: " + deffence + " as: " + addScore + " bu: " + bullet + " sl: " + hpBar.name);
     }
 }
