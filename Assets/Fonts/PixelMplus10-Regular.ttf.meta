@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d3316865d3ddf4a408ef0fdb33eaa0cd
 timeCreated: 1466342575
+=======
+guid: 341a93436e74be445a9938bc648d08d7
+timeCreated: 1466345579
+>>>>>>> origin/develop_zero
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 3
@@ -11,7 +16,11 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames: []
   fallbackFontReferences:
+<<<<<<< HEAD
   - {fileID: 12800000, guid: c6ee0a568ed873b4fbd2eb5c5d7839c4, type: 3}
+=======
+  - {fileID: 12800000, guid: 9173fb8cd0ef6a544bc679240756259e, type: 3}
+>>>>>>> origin/develop_zero
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

@@ -1,9 +1,23 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2bd9d1bdabeb3a447b68a48d4d8662c8
 timeCreated: 1466342575
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
+=======
+guid: 1ff9d4a62c505ee42a9d47de5d3c8e26
+timeCreated: 1466345579
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Effect_Damage_0
+    21300002: Effect_Damage_1
+    21300004: Effect_Damage_2
+    21300006: Effect_Damage_3
+    21300008: Effect_Damage_4
+    21300010: Effect_Damage_5
+>>>>>>> origin/develop_zero
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,11 +40,19 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: -1
+=======
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+>>>>>>> origin/develop_zero
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +60,11 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
+<<<<<<< HEAD
   spriteMode: 1
+=======
+  spriteMode: 2
+>>>>>>> origin/develop_zero
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +75,110 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+<<<<<<< HEAD
     sprites: []
+=======
+    sprites:
+    - name: Effect_Damage_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 20}
+        - {x: -20, y: 8}
+        - {x: -20, y: -12}
+        - {x: -12, y: -20}
+        - {x: 10, y: -20}
+        - {x: 20, y: -12}
+        - {x: 20, y: 13}
+        - {x: 9, y: 20}
+    - name: Effect_Damage_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 10}
+        - {x: -10, y: -10}
+        - {x: 8, y: -10}
+        - {x: 10, y: -9}
+        - {x: 10, y: 10}
+    - name: Effect_Damage_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 13}
+        - {x: -13, y: -12}
+        - {x: -11, y: -13}
+        - {x: 13, y: -13}
+        - {x: 13, y: 13}
+    - name: Effect_Damage_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 15}
+        - {x: -15, y: -14}
+        - {x: -14, y: -15}
+        - {x: 15, y: -15}
+        - {x: 15, y: 15}
+    - name: Effect_Damage_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 15}
+        - {x: -15, y: -14}
+        - {x: -14, y: -15}
+        - {x: 15, y: -15}
+        - {x: 15, y: 15}
+    - name: Effect_Damage_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 15}
+        - {x: -15, y: -13}
+        - {x: -14, y: -15}
+        - {x: 15, y: -15}
+        - {x: 15, y: 15}
+>>>>>>> origin/develop_zero
     outline: []
   spritePackingTag: 
   userData: 
