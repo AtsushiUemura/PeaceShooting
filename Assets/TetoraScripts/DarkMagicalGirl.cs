@@ -6,18 +6,19 @@ public class DarkMagicalGirl : Enemy
 {
     private AI ai;
     public int _maxHp;
-    public int _speed;
+    public float _speed;
     public int _attack;
     public int _deffence;
     public int _addScore;
     public Sprite _bullet;
     public Slider _hpBar;
     public float distance;
-    public Transform target;
+    public Transform _target;
+    public bool lookAtTarget;
     protected override void Move()
     {
         Debug.Log("move");
-        ai.Tracking(target, distance, base.speed);
+        ai.Tracking(base.target, distance, base.speed);
     }
     protected override void Shot()
     {
@@ -28,7 +29,7 @@ public class DarkMagicalGirl : Enemy
     void Start()
     {
         ai = GetComponent<AI>();
-        base.InitStatus(_maxHp, _speed, _attack, _deffence, _addScore, _bullet, _hpBar);
+        base.InitStatus(_maxHp, _speed, _attack, _deffence, _addScore, _bullet, _hpBar, _target);
         Shot();
         base.DebugLog();
     }
@@ -36,6 +37,7 @@ public class DarkMagicalGirl : Enemy
     // Update is called once per frame
     void Update()
     {
+        base.LookAt(lookAtTarget);
         Move();
     }
 }

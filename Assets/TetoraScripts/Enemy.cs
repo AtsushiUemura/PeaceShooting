@@ -6,13 +6,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected int maxHp { get; set; }
     protected int hp { get; set; }
-    protected int speed { get; set; }
+    protected float speed { get; set; }
     protected int attack { get; set; }
     protected int deffence { get; set; }
     protected int addScore { get; set; }
     protected bool isDead { get; set; }
     protected Sprite bullet { get; set; }
     protected Slider hpBar { get; set; }
+    protected Transform target { get; set; }
+
     /// <summary>
     /// 敵の動き操作
     /// </summary>
@@ -22,9 +24,14 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     protected abstract void Shot();
 
+    protected void LookAt(bool lookAtTarget)
+    {
+        if (!lookAtTarget) return;
+        else transform.LookAt2D(target, Vector2.up);
+    }
     protected void OnBecameInvisible()
     {
-        // ScoreManager.instance.AddScore(addScore);
+        ScoreManager.instance.AddScore(addScore);
         gameObject.SetActive(false);
     }
     public void Damage(int damage)
@@ -32,12 +39,12 @@ public abstract class Enemy : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
-            // ScoreManager.instance.StopCombo();
+            ScoreManager.instance.StopCombo();
             isDead = true;
             gameObject.SetActive(false);
         }
     }
-    protected void InitStatus(int maxHp, int speed, int attack, int deffence, int addScore, Sprite bullet, Slider hpBar)
+    protected void InitStatus(int maxHp, float speed, int attack, int deffence, int addScore, Sprite bullet, Slider hpBar, Transform target)
     {
         hp = maxHp;
         this.speed = speed;
@@ -47,6 +54,7 @@ public abstract class Enemy : MonoBehaviour
         isDead = false;
         this.bullet = bullet;
         this.hpBar = hpBar;
+        this.target = target;
     }
     /// <summary>
     /// デバッグ

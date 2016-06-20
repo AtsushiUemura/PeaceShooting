@@ -1,27 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 8488345721b86c646bbe7ff285572a8d
-timeCreated: 1466342575
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-=======
-guid: 2db87b3c51f802d44b58bce2ba8c927b
-timeCreated: 1466345579
-licenseType: Free
-TextureImporter:
-  fileIDToRecycleName:
-    21300000: Enemy1_0
-    21300002: Enemy1_1
-  serializedVersion: 2
-  mipmaps:
-    mipMapMode: 0
-    enableMipMap: 0
->>>>>>> origin/develop_zero
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -40,19 +24,11 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-<<<<<<< HEAD
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
-=======
-  textureFormat: -3
-  maxTextureSize: 2048
-  textureSettings:
-    filterMode: 0
     aniso: 16
->>>>>>> origin/develop_zero
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -60,11 +36,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-<<<<<<< HEAD
   spriteMode: 1
-=======
-  spriteMode: 2
->>>>>>> origin/develop_zero
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,52 +47,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-<<<<<<< HEAD
     sprites: []
-=======
-    sprites:
-    - name: Enemy1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 13}
-        - {x: -19, y: 10}
-        - {x: -19, y: -10}
-        - {x: -9, y: -17}
-        - {x: 15, y: -17}
-        - {x: 19, y: -13}
-        - {x: 19, y: 12}
-        - {x: 14, y: 13}
-    - name: Enemy1_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 13}
-        - {x: -16, y: 9}
-        - {x: -19, y: 4}
-        - {x: -19, y: -3}
-        - {x: -13, y: -11}
-        - {x: -7, y: -17}
-        - {x: 4, y: -17}
-        - {x: 11, y: -16}
-        - {x: 19, y: -3}
-        - {x: 19, y: 9}
-        - {x: 14, y: 13}
->>>>>>> origin/develop_zero
     outline: []
   spritePackingTag: 
   userData: 
