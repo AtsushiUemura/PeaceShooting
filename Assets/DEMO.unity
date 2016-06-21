@@ -415,12 +415,12 @@ MonoBehaviour:
   _addScore: 100
   _bullet: {fileID: 163264, guid: 5acb4d7a466ed20418af1bf179abcb4f, type: 2}
   _hpBar: {fileID: 0}
-  distance: 6
+  distance: 4
   _target: {fileID: 1176485654}
-  _lookAtTarget: 1
-  _lookAtTargetSpan: 0.8
+  _lookAtTarget: 0
+  _lookAtTargetSpan: 0.3
   arrived: 0
-  destination: {x: -3, y: 4}
+  _destination: {x: -3, y: 4}
 --- !u!114 &757471297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1193875045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,12 +830,12 @@ MonoBehaviour:
   _addScore: 100
   _bullet: {fileID: 163264, guid: 5acb4d7a466ed20418af1bf179abcb4f, type: 2}
   _hpBar: {fileID: 0}
-  distance: 6
+  distance: 4
   _target: {fileID: 1176485654}
-  _lookAtTarget: 0
-  _lookAtTargetSpan: 0.5
+  _lookAtTarget: 1
+  _lookAtTargetSpan: 0.6
   arrived: 0
-  destination: {x: 0, y: 4}
+  _destination: {x: 0, y: 4}
 --- !u!114 &1193875046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,12 +1212,12 @@ MonoBehaviour:
   _addScore: 100
   _bullet: {fileID: 163264, guid: 5acb4d7a466ed20418af1bf179abcb4f, type: 2}
   _hpBar: {fileID: 0}
-  distance: 6
+  distance: 4
   _target: {fileID: 1176485654}
-  _lookAtTarget: 1
-  _lookAtTargetSpan: 0.8
+  _lookAtTarget: 0
+  _lookAtTargetSpan: 0.3
   arrived: 0
-  destination: {x: 3, y: 4}
+  _destination: {x: 3, y: 4}
 --- !u!114 &1714854303
 MonoBehaviour:
   m_ObjectHideFlags: 0

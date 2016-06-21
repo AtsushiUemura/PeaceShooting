@@ -17,6 +17,8 @@ public abstract class Enemy : MonoBehaviour
     protected GameObject bullet { get; set; }
     protected Slider hpBar { get; set; }
     protected Transform target { get; set; }
+    protected int timer { get; set; }
+    protected Vector2 destination { get; set; }
 
     protected abstract void Move();
 
@@ -54,6 +56,7 @@ public abstract class Enemy : MonoBehaviour
         int addScore,
         bool lookAtTarget,
         float lookAtTargetSpan,
+        Vector2 destination,
         GameObject bullet,
         Slider hpBar,
         Transform target)
@@ -65,6 +68,7 @@ public abstract class Enemy : MonoBehaviour
         this.addScore = addScore;
         this.lookAtTarget = lookAtTarget;
         this.lookAtTargetSpan = lookAtTargetSpan;
+        this.destination = destination;
         isDead = false;
         this.bullet = bullet;
         this.hpBar = hpBar;
@@ -79,7 +83,10 @@ public abstract class Enemy : MonoBehaviour
     {
         while (true)
         {
-            LookAt2D();
+            timer++;
+            Debug.Log(timer);
+            if (timer == 30) destination = new Vector2(0, 10);
+                 LookAt2D();
             Shot();
             yield return new WaitForSeconds(lookAtTargetSpan);
         }
@@ -90,6 +97,6 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     protected void DebugLog()
     {
-        Debug.Log(target);
+ 
     }
 }
