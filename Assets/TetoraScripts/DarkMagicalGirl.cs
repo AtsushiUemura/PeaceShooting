@@ -18,13 +18,16 @@ public class DarkMagicalGirl : Enemy
     public bool _lookAtTarget;
     public float _lookAtTargetSpan;
 
+    public bool arrived;
+    public Vector2 destination;
+
     protected override void Move()
     {
         if (base.target == null) return;
         else
         {
-            ai.Tracking(base.target, distance, base.speed);
-
+            if (!arrived) ai.Tracking(destination, .0f, base.speed);
+            else ai.Tracking(base.target.position, distance, base.speed / 2);
         }
     }
     protected override void Shot()
@@ -32,7 +35,7 @@ public class DarkMagicalGirl : Enemy
         if (base.target == null) return;
         else
         {
-            Instantiate(base.bullet, transform.position, transform.rotation);
+            if (arrived) Instantiate(base.bullet, transform.position, transform.rotation);
 
         }
     }
@@ -43,11 +46,21 @@ public class DarkMagicalGirl : Enemy
         ai = GetComponent<AI>();
         base.InitStatus(_maxHp, _speed, _attack, _deffence, _addScore, _lookAtTarget, _lookAtTargetSpan, _bullet, _hpBar, _target);
         base.LookAtTarget();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        if (Vector2.Distance(transform.position, destination) < 0.1f) arrived = true;
+ 
     }
+
+    private void OnBecameVisible()
+    {
+        GetComponent<CircleCollider2D>().enabled = true;
+    }
+
 }

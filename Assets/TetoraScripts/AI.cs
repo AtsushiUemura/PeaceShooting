@@ -4,12 +4,12 @@ using System.Collections;
 public class AI : MonoBehaviour
 {
 
-    public void Tracking(Transform targetTra, float distance, float speed)
+    public void Tracking(Vector2 targetPos, float distance, float speed)
     {
-        if (Vector2.Distance(targetTra.position, this.transform.position) < distance) return;
+        if (Vector2.Distance(targetPos, this.transform.position) < distance) return;
         else
         {
-            Vector2 direction = targetTra.position - this.transform.position;
+            Vector2 direction = targetPos - (Vector2)this.transform.position;
             direction.Normalize();
             Vector2 pos = this.transform.position;
             pos += direction * speed * Time.deltaTime;

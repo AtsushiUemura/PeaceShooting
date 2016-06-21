@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
-
     [SerializeField]
     private float speed;
     [SerializeField]
