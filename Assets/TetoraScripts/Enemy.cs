@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
@@ -10,8 +11,10 @@ public abstract class Enemy : MonoBehaviour
     protected int attack { get; set; }
     protected int deffence { get; set; }
     protected int addScore { get; set; }
+    protected bool lookAtTarget { get; set; }
+    protected float lookAtTargetSpan { get; set; }
     protected bool isDead { get; set; }
-    protected Sprite bullet { get; set; }
+    protected GameObject bullet { get; set; }
     protected Slider hpBar { get; set; }
     protected Transform target { get; set; }
 
@@ -24,11 +27,6 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     protected abstract void Shot();
 
-    protected void LookAt(bool lookAtTarget)
-    {
-        if (!lookAtTarget) return;
-        else transform.LookAt2D(target, Vector2.up);
-    }
     protected void OnBecameInvisible()
     {
         ScoreManager.instance.AddScore(addScore);
@@ -44,23 +42,53 @@ public abstract class Enemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    protected void InitStatus(int maxHp, float speed, int attack, int deffence, int addScore, Sprite bullet, Slider hpBar, Transform target)
+    private void LookAt2D()
+    {
+        transform.LookAt2D(target, Vector2.up);
+    }
+    protected void InitStatus(
+        int maxHp,
+        float speed,
+        int attack,
+        int deffence,
+        int addScore,
+        bool lookAtTarget,
+        float lookAtTargetSpan,
+        GameObject bullet,
+        Slider hpBar,
+        Transform target)
     {
         hp = maxHp;
         this.speed = speed;
         this.attack = attack;
         this.deffence = deffence;
         this.addScore = addScore;
+        this.lookAtTarget = lookAtTarget;
+        this.lookAtTargetSpan = lookAtTargetSpan;
         isDead = false;
         this.bullet = bullet;
         this.hpBar = hpBar;
         this.target = target;
+    }
+
+    protected void LookAtTarget()
+    {
+        StartCoroutine(Wait(target, lookAtTargetSpan));
+    }
+    private IEnumerator Wait(Transform target, float time)
+    {
+        while (true)
+        {
+            if (lookAtTarget) LookAt2D();
+            Shot();
+            yield return new WaitForSeconds(time);
+        }
     }
     /// <summary>
     /// デバッグ
     /// </summary>
     protected void DebugLog()
     {
-        Debug.Log("hp: " + hp + " sp: " + speed + " at: " + attack + " df: " + deffence + " as: " + addScore + " bu: " + bullet + " sl: " + hpBar.name);
+
     }
 }

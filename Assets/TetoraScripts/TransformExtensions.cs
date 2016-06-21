@@ -1,7 +1,6 @@
 ﻿//http://qiita.com/adarapata/items/9218c15064b2f184182d
 
 using UnityEngine;
-using System.Collections;
 
 public static class TransformExtensions
 {
@@ -16,9 +15,9 @@ public static class TransformExtensions
         LookAt2D(self, target.position, forward);
     }
 
-    public static void LookAt2D(this Transform self, Vector3 target, Vector2 back)
+    public static void LookAt2D(this Transform self, Vector3 target, Vector2 forward)
     {
-        var forwardDiff = GetForwardDiffPoint(back);
+        var forwardDiff = GetForwardDiffPoint(forward);
         Vector3 direction = target - self.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         self.rotation = Quaternion.AngleAxis(angle - forwardDiff, Vector3.forward);
@@ -31,7 +30,7 @@ public static class TransformExtensions
     /// <param name="forward">Forward.</param>
     static private float GetForwardDiffPoint(Vector2 forward)
     {
-        if (Equals(forward, Vector2.up)) return 270;
+        if (Equals(forward, Vector2.up)) return 90;
         if (Equals(forward, Vector2.right)) return 0;
         return 0;
     }

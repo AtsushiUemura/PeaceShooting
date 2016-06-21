@@ -149,7 +149,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 609595250}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -610,7 +610,7 @@ GameObject:
   - 114: {fileID: 1193875045}
   m_Layer: 0
   m_Name: DarkMagicalGirl
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -627,14 +627,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 100
-  _speed: 1.5
+  _speed: 2
   _attack: 10
   _deffence: 10
   _addScore: 100
-  _bullet: {fileID: 0}
+  _bullet: {fileID: 163264, guid: 5acb4d7a466ed20418af1bf179abcb4f, type: 2}
   _hpBar: {fileID: 0}
-  distance: 1.5
-  target: {fileID: 1176485654}
+  distance: 6
+  _target: {fileID: 1176485654}
+  _lookAtTarget: 1
+  _lookAtTargetSpan: 0.5
 --- !u!114 &1193875046
 MonoBehaviour:
   m_ObjectHideFlags: 0
