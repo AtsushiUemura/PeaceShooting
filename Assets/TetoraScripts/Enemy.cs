@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
     protected int hp { get; set; }
     protected float speed { get; set; }
     protected int attack { get; set; }
-    protected int deffence { get; set; }
+    protected int defence { get; set; }
     protected int addScore { get; set; }
     protected bool lookAtTarget { get; set; }
     protected float lookAtTargetSpan { get; set; }
@@ -18,13 +18,8 @@ public abstract class Enemy : MonoBehaviour
     protected Slider hpBar { get; set; }
     protected Transform target { get; set; }
 
-    /// <summary>
-    /// 敵の動き操作
-    /// </summary>
     protected abstract void Move();
-    /// <summary>
-    /// 敵の弾幕操作
-    /// </summary>
+
     protected abstract void Shot();
 
     protected void OnBecameInvisible()
@@ -44,7 +39,12 @@ public abstract class Enemy : MonoBehaviour
     }
     private void LookAt2D()
     {
-        transform.LookAt2D(target, Vector2.up);
+        if (target == null) return;
+        else
+        {
+            if (!lookAtTarget) return;
+            else transform.LookAt2D(target, Vector2.up);
+        }
     }
     protected void InitStatus(
         int maxHp,
@@ -61,7 +61,7 @@ public abstract class Enemy : MonoBehaviour
         hp = maxHp;
         this.speed = speed;
         this.attack = attack;
-        this.deffence = deffence;
+        this.defence = deffence;
         this.addScore = addScore;
         this.lookAtTarget = lookAtTarget;
         this.lookAtTargetSpan = lookAtTargetSpan;
@@ -73,22 +73,23 @@ public abstract class Enemy : MonoBehaviour
 
     protected void LookAtTarget()
     {
-        StartCoroutine(Wait(target, lookAtTargetSpan));
+        StartCoroutine(Wait());
     }
-    private IEnumerator Wait(Transform target, float time)
+    private IEnumerator Wait()
     {
         while (true)
         {
-            if (lookAtTarget) LookAt2D();
+            LookAt2D();
             Shot();
-            yield return new WaitForSeconds(time);
+            yield return new WaitForSeconds(lookAtTargetSpan);
         }
     }
+
     /// <summary>
     /// デバッグ
     /// </summary>
     protected void DebugLog()
     {
-
+        Debug.Log(target);
     }
 }

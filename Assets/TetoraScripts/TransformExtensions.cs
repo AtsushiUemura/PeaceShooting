@@ -30,7 +30,7 @@ public static class TransformExtensions
     /// <param name="forward">Forward.</param>
     static private float GetForwardDiffPoint(Vector2 forward)
     {
-        if (Equals(forward, Vector2.up)) return 90;
+        if (Equals(forward, Vector2.up)) return -90;
         if (Equals(forward, Vector2.right)) return 0;
         return 0;
     }

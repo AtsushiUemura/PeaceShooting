@@ -1,29 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour
+{
 
     [SerializeField]
     private float speed;
     [SerializeField]
     private int atk;
 
-	// Use this for initialization
-	void Start () {
-        GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
-	}
+    public enum HitTag
+    {
+        Player,
+        Enemy,
+    }
+    public HitTag hitTag = new HitTag();
 
-    void OnBecameInvisible()
+    // Use this for initialization
+    void Start()
+    {
+        if (hitTag == HitTag.Enemy) GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(Vector2.up) * speed;
+        if (hitTag == HitTag.Player) GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(Vector2.down) * speed;
+    }
+
+    private void OnBecameInvisible()
     {
         Destroy(this.gameObject);
     }
 
-    void OnTriggerEnter2D (Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Enemy")
+        if (collider.CompareTag("Enemy") && hitTag == HitTag.Enemy)
         {
             Enemy enemy = collider.GetComponent<Enemy>();
             enemy.Damage(atk);
+        }
+        if (collider.CompareTag("Player") && hitTag == HitTag.Player)
+        {
+            Player player = collider.GetComponent<Player>();
+            player.Damage(atk);
         }
     }
 

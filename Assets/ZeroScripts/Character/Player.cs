@@ -6,7 +6,8 @@ using UnityEngine.UI;
 /// HPの管理（UIも含む）
 /// 移動、攻撃以外の処理全て
 /// </summary>
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     [SerializeField]
     private Status status;
@@ -28,29 +29,32 @@ public class Player : MonoBehaviour {
     private PlayerShooting playerShooting;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         status.Init();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         hpText.text = status.Hp.ToString();
-	}
+    }
 
     /// <summary>
     /// ダメージ時の処理
     /// HP減算、コンボストップ、ゲームオーバー判定
     /// </summary>
     /// <param name="damage"></param>
-    void Damage(int damage)
+    public void Damage(int damage)
     {
         status.Hp -= damage;
         ScoreManager.instance.StopCombo();
         //ゲームオーバー処理
         if (status.Hp <= 0)
         {
-            SetComponent(false);
+            this.gameObject.SetActive(false);
+            //            SetComponent(false);
         }
     }
 
@@ -61,7 +65,7 @@ public class Player : MonoBehaviour {
     {
         if (spriteRenderer.color.b >= 50)
         {
-            spriteRenderer.color -= new Color(1,1,1);
+            spriteRenderer.color -= new Color(1, 1, 1);
         }
     }
 
