@@ -13,12 +13,16 @@ public abstract class Enemy : MonoBehaviour
     protected int addScore { get; set; }
     protected bool lookAtTarget { get; set; }
     protected float lookAtTargetSpan { get; set; }
+    protected bool enableShot { get; set; }
     protected bool isDead { get; set; }
     protected GameObject bullet { get; set; }
     protected Slider hpBar { get; set; }
     protected Transform target { get; set; }
-    protected int timer { get; set; }
+    private int timer;
+    protected int survivalTime { get; set; }
     protected Vector2 destination { get; set; }
+    protected Vector2 homePos { get; set; }
+    protected bool arrived { get; set; }
 
     protected abstract void Move();
 
@@ -57,6 +61,9 @@ public abstract class Enemy : MonoBehaviour
         bool lookAtTarget,
         float lookAtTargetSpan,
         Vector2 destination,
+        Vector2 homePos,
+        int survivalTime,
+        bool enableShot,
         GameObject bullet,
         Slider hpBar,
         Transform target)
@@ -69,6 +76,9 @@ public abstract class Enemy : MonoBehaviour
         this.lookAtTarget = lookAtTarget;
         this.lookAtTargetSpan = lookAtTargetSpan;
         this.destination = destination;
+        this.homePos = homePos;
+        this.survivalTime = survivalTime;
+        this.enableShot = enableShot;
         isDead = false;
         this.bullet = bullet;
         this.hpBar = hpBar;
@@ -84,9 +94,8 @@ public abstract class Enemy : MonoBehaviour
         while (true)
         {
             timer++;
-            Debug.Log(timer);
-            if (timer == 30) destination = new Vector2(0, 10);
-                 LookAt2D();
+            if (timer >= survivalTime) destination = homePos;
+            LookAt2D();
             Shot();
             yield return new WaitForSeconds(lookAtTargetSpan);
         }
@@ -97,6 +106,6 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     protected void DebugLog()
     {
- 
+
     }
 }

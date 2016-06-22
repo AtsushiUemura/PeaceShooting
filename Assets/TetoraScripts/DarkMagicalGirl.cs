@@ -17,13 +17,15 @@ public class DarkMagicalGirl : Enemy
     public Transform _target;
     public bool _lookAtTarget;
     public float _lookAtTargetSpan;
-
-    public bool arrived;
+    public int _survivalTime;
+    public bool _enableShot;
     public Vector2 _destination;
+    public Vector2 _homePos;
+    public bool moveStop;
 
     protected override void Move()
     {
-        if (base.target == null) return;
+        if (moveStop) return;
         else
         {
             if (!arrived) ai.Tracking(destination, 0f, base.speed);
@@ -32,15 +34,18 @@ public class DarkMagicalGirl : Enemy
     }
     protected override void Shot()
     {
-        if (base.target == null) return;
-        else
+        if (base.enableShot)
         {
-            if (!arrived) return;
+            if (base.target == null) return;
             else
             {
-                for (int i = 0; i < 8; i++)
-                    Instantiate(base.bullet, transform.position, Quaternion.AngleAxis(45 * i, Vector3.forward));
-                Instantiate(base.bullet, transform.position, transform.rotation);
+                if (!arrived) return;
+                else
+                {
+                    for (int i = 0; i < 12; i++)
+                        Instantiate(base.bullet, transform.position, Quaternion.AngleAxis(30 * i, Vector3.forward));
+                    Instantiate(base.bullet, transform.position, transform.rotation);
+                }
             }
         }
     }
@@ -49,7 +54,7 @@ public class DarkMagicalGirl : Enemy
     void Start()
     {
         ai = GetComponent<AI>();
-        base.InitStatus(_maxHp, _speed, _attack, _deffence, _addScore, _lookAtTarget, _lookAtTargetSpan, _destination, _bullet, _hpBar, _target);
+        base.InitStatus(_maxHp, _speed, _attack, _deffence, _addScore, _lookAtTarget, _lookAtTargetSpan, _destination, _homePos, _survivalTime, _enableShot, _bullet, _hpBar, _target);
         base.LookAtTarget();
 
 
@@ -59,8 +64,8 @@ public class DarkMagicalGirl : Enemy
     void Update()
     {
         Move();
-        if (Vector2.Distance(transform.position, base.destination) < 0.1f) arrived = true;
-        else if (Vector2.Distance(transform.position, base.destination) >= 2.0f) arrived = false;
+        if (Vector2.Distance(transform.position, base.destination) < 0.1f) base.arrived = true;
+        else if (Vector2.Distance(transform.position, base.destination) >= 2.0f) base.arrived = false;
 
     }
 

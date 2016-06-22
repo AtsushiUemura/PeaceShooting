@@ -360,7 +360,7 @@ GameObject:
   - 50: {fileID: 757471295}
   - 58: {fileID: 757471294}
   m_Layer: 0
-  m_Name: DarkMagicalGirl (2)
+  m_Name: Mob (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -417,10 +417,13 @@ MonoBehaviour:
   _hpBar: {fileID: 0}
   distance: 4
   _target: {fileID: 1176485654}
-  _lookAtTarget: 1
+  _lookAtTarget: 0
   _lookAtTargetSpan: 0.3
-  arrived: 0
+  _survivalTime: 60
+  _enableShot: 1
   _destination: {x: -3, y: 4}
+  _homePos: {x: 3, y: -10}
+  moveStop: 0
 --- !u!114 &757471297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,7 +727,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1176485652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -3.21, z: 0}
+  m_LocalPosition: {x: -2, y: -3.21, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -806,7 +809,7 @@ GameObject:
   - 50: {fileID: 1193875050}
   - 58: {fileID: 1193875049}
   m_Layer: 0
-  m_Name: DarkMagicalGirl
+  m_Name: Mob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,10 +835,13 @@ MonoBehaviour:
   _hpBar: {fileID: 0}
   distance: 4
   _target: {fileID: 1176485654}
-  _lookAtTarget: 1
-  _lookAtTargetSpan: 0.6
-  arrived: 0
+  _lookAtTarget: 0
+  _lookAtTargetSpan: 0.2
+  _survivalTime: 100
+  _enableShot: 1
   _destination: {x: 0, y: 4}
+  _homePos: {x: 0, y: -10}
+  moveStop: 0
 --- !u!114 &1193875046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,7 +1163,7 @@ GameObject:
   - 50: {fileID: 1714854301}
   - 58: {fileID: 1714854300}
   m_Layer: 0
-  m_Name: DarkMagicalGirl (1)
+  m_Name: Mob (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1214,10 +1220,13 @@ MonoBehaviour:
   _hpBar: {fileID: 0}
   distance: 4
   _target: {fileID: 1176485654}
-  _lookAtTarget: 1
+  _lookAtTarget: 0
   _lookAtTargetSpan: 0.3
-  arrived: 0
+  _survivalTime: 60
+  _enableShot: 1
   _destination: {x: 3, y: 4}
+  _homePos: {x: 3, y: -10}
+  moveStop: 0
 --- !u!114 &1714854303
 MonoBehaviour:
   m_ObjectHideFlags: 0
