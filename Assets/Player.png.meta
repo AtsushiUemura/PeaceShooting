@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cc6a75ba81e0b2846a6efc038c25add4
 timeCreated: 1466345579
 licenseType: Free
@@ -9,6 +10,13 @@ TextureImporter:
     21300004: Player_2
     21300006: Player_3
     21300008: Player_4
+=======
+guid: c6ef25c1f998c8f449e5bc184c012ffe
+timeCreated: 1466342575
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> master
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,11 +39,19 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
     aniso: 16
+=======
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+>>>>>>> master
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -43,7 +59,11 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> master
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -54,6 +74,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+<<<<<<< HEAD
     sprites:
     - name: Player_0
       rect:
@@ -144,6 +165,9 @@ TextureImporter:
         - {x: 18, y: -13.5}
         - {x: 18, y: 18.5}
         - {x: 17, y: 20.5}
+=======
+    sprites: []
+>>>>>>> master
     outline: []
   spritePackingTag: 
   userData: 

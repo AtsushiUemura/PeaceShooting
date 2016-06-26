@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2db87b3c51f802d44b58bce2ba8c927b
 timeCreated: 1466345579
 licenseType: Free
@@ -10,6 +11,17 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+=======
+guid: 8488345721b86c646bbe7ff285572a8d
+timeCreated: 1466342575
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+>>>>>>> master
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -28,11 +40,19 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
     aniso: 16
+=======
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+>>>>>>> master
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -40,7 +60,11 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> master
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,6 +75,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+<<<<<<< HEAD
     sprites:
     - name: Enemy1_0
       rect:
@@ -93,6 +118,9 @@ TextureImporter:
         - {x: 19, y: -3}
         - {x: 19, y: 9}
         - {x: 14, y: 13}
+=======
+    sprites: []
+>>>>>>> master
     outline: []
   spritePackingTag: 
   userData: 
