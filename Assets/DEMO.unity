@@ -1056,8 +1056,8 @@ MonoBehaviour:
   _target: {fileID: 1176485654}
   _lookAtTarget: 1
   _lookAtTargetSpan: 0.2
-  _survivalTime: 100
-  _enableShot: 0
+  _survivalTime: 80
+  _enableShot: 1
   _destination: {x: 0, y: 4}
   _homePos: {x: 0, y: -10}
   moveStop: 0
