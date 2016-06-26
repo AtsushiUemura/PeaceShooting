@@ -5,26 +5,27 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class FadeScript : MonoBehaviour {
 
+    [SerializeField]
     private Image image;
     [SerializeField]
     private float fadeLeap;
 
 	// Use this for initialization
 	void Start () {
-        image = this.GetComponent<Image>();
-        StartCoroutine("SetRayCastTartget",false);
 	}
 
-    IEnumerator SetRayCastTartget(bool isTarget)
+    public IEnumerator SetRayCastTartget(bool isTarget)
     {
         if(isTarget){
+            image.raycastTarget = isTarget;
             yield return StartCoroutine("FadeOut");
         }
         else
         {
             yield return StartCoroutine("FadeIn");
+            image.raycastTarget = isTarget;
+
         }
-        image.raycastTarget = isTarget;
     }
 
     IEnumerator FadeIn()
@@ -34,8 +35,14 @@ public class FadeScript : MonoBehaviour {
             t += Time.deltaTime;
             var c = image.color;
             c.a = Mathf.Lerp(c.a, 0, t * fadeLeap);
-            image.color = c;            
+            image.color = c;
             yield return null;
+            if (image.color.a <= 0.1f)
+            {
+                c.a = 0;
+                image.color = c;
+                break;
+            }
         }
     }
 
@@ -49,7 +56,15 @@ public class FadeScript : MonoBehaviour {
             c.a = Mathf.Lerp(0, c.a, t * fadeLeap);
             image.color = c;
             yield return null;
+            
+            if (image.color.a <= 0.9f)
+            {
+                c.a = 1;
+                image.color = c;
+                break;
+            }
         }
+
     }
 
 

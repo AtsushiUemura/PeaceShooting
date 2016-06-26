@@ -57,6 +57,8 @@
      <Compile Include="Assets\ZeroScript\Manager\SoundManager.cs" />
      <Compile Include="Assets\ZeroScript\Manager\StageManager.cs" />
      <Compile Include="Assets\ZeroScript\Manager\TitleManager.cs" />
+     <Compile Include="Assets\ZeroScript\UIScript\GameButton.cs" />
+     <Compile Include="Assets\ZeroScript\UIScript\RecordButton.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
