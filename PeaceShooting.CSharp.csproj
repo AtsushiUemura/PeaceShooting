@@ -71,7 +71,9 @@
   <ItemGroup>
     <Compile Include="Assets\TetoraScripts\AI.cs" />
     <Compile Include="Assets\TetoraScripts\DarkMagicalGirl.cs" />
+    <Compile Include="Assets\TetoraScripts\DontShowScreenReset.cs" />
     <Compile Include="Assets\TetoraScripts\Enemy.cs" />
+    <Compile Include="Assets\TetoraScripts\ScreenManager.cs" />
     <Compile Include="Assets\TetoraScripts\TransformExtensions.cs" />
     <Compile Include="Assets\ZeroScripts\Animation\FadeScript.cs" />
     <Compile Include="Assets\ZeroScripts\Bullet.cs" />
