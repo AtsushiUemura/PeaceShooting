@@ -12,10 +12,10 @@ public class TitleManager : MonoBehaviour {
         StartCoroutine(fade.SetRayCastTartget(false));	    
 	}
 
-    public IEnumerator LoadGameScene()
+    public IEnumerator LoadGameScene(int nextSceneNumber)
     {
         yield return StartCoroutine(fade.SetRayCastTartget(true));
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(nextSceneNumber);
     }
 	
 	// Update is called once per frame

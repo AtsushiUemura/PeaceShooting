@@ -5,10 +5,12 @@ public class GameButton : MonoBehaviour {
 
     [SerializeField]
     private TitleManager titleManager;
+    [SerializeField]
+    private int nextSceneNumber;
 
     public void OnClick()
     {
-        titleManager.LoadGameScene();
+        StartCoroutine(titleManager.LoadGameScene(nextSceneNumber));
     }
 
 }
